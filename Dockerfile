@@ -27,7 +27,7 @@ RUN chown www-data:www-data /var/www/html
 RUN rm /etc/nginx/sites-enabled/default
 RUN mkdir /config
 RUN cp /var/www/html/nginx.example.com.conf /config/akaunting.conf
-RUN chown www-data:www-data /config/akaunting.conf
+RUN chown root:root /config/akaunting.conf
 RUN ln -s /etc/nginx/sites-avaliable/akaunting.conf
 RUN ln -s /etc/nginx/sites-available/akaunting.conf /etc/nginx/sites-enabled/akaunting.conf
 
