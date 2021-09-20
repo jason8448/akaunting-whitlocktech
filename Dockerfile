@@ -25,11 +25,12 @@ RUN wget -O /tmp/akaunting.zip https://github.com/akaunting/akaunting/releases/d
 RUN unzip /tmp/akaunting.zip -d /var/www/html
 RUN chown www-data:www-data /var/www/html
 RUN rm /etc/nginx/sites-enabled/default
+RUN mkdir /config
 RUN cp /var/www/html/nginx.example.com.conf /config/akaunting.conf
 RUN ln -s /etc/nginx/sites-avaliable/akaunting.conf
 RUN chown root:root /etc/nginx/sites-available/akaunting.conf
 RUN ln -s /etc/nginx/sites-available/akaunting.conf /etc/nginx/sites-enabled/akaunting.conf
-RUN mkdir /config
+
 
 
 #Volumes
