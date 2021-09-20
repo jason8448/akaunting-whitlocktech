@@ -3,7 +3,7 @@ FROM ubuntu:20.04
 
 # LABEL about the custom image
 LABEL maintainer="whitlocktech@gmail.com"
-LABEL version="0.1"
+LABEL version="0.5"
 LABEL description="Dockerized Akaunting"
 LABEL Akaunting_version="2.1.25"
 
@@ -30,7 +30,7 @@ RUN cp /var/www/html/nginx.example.com.conf /config/akaunting.conf
 RUN chown root:root /config/akaunting.conf
 RUN ln -s /etc/nginx/sites-avaliable/akaunting.conf
 RUN ln -s /etc/nginx/sites-available/akaunting.conf /etc/nginx/sites-enabled/akaunting.conf
-
+ADD ./config/akaunting.conf /config/akaunting.conf
 
 
 #Volumes
@@ -40,4 +40,7 @@ VOLUME /config
 #Expose ports
 
 EXPOSE 80
-EXPOSE 3306
+
+# CMD
+
+CMD ["nginx", "-g", "daemon off;"]
