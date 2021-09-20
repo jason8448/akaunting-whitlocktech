@@ -1,0 +1,12 @@
+---
+version: "3"
+services:
+  akaunting:
+    image: whitlocktech/akaunting:latest
+    container_name: akaunting
+    volumes:
+      - /home/colby/akaunting/config/www:/var/www/akaunting
+      - /home/colby/akaunting/config/nginx:/etc/nginx
+    ports:
+      - 3186:80
+    restart: unless-stopped
