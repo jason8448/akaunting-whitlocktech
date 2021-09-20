@@ -29,7 +29,7 @@ RUN rm /etc/nginx/sites-available/default
 RUN cp /var/www/html/nginx.example.com.conf /etc/nginx/sites-available/default.conf
 RUN chown root:root /etc/nginx/sites-available/default.conf
 RUN ln -s /etc/nginx/sites-available/default.conf /etc/nginx/sites-enabled
-RUN systemctl restart nginx
+RUN /etc/init.d/nginx restart
 
 
 #Volumes
