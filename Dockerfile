@@ -5,7 +5,7 @@ FROM ubuntu:20.04
 LABEL maintainer="whitlocktech@gmail.com"
 LABEL version="0.1"
 LABEL description="Dockerized Akaunting"
-LABEL Akaunting version="2.1.25"
+LABEL Akaunting_version="2.1.25"
 
 # Disable Prompt During Packages Installation
 ARG DEBIAN_FRONTEND=noninteractive
@@ -25,15 +25,15 @@ RUN wget -O /tmp/akaunting.zip https://github.com/akaunting/akaunting/releases/d
 RUN unzip /tmp/akaunting.zip -d /var/www/html
 RUN chown www-data:www-data /var/www/html
 RUN rm /etc/nginx/sites-enabled/default
-RUN rm /etc/nginx/sites-available/default
-RUN cp /var/www/html/nginx.example.com.conf /etc/nginx/sites-available/default.conf
-RUN chown root:root /etc/nginx/sites-available/default.conf
-RUN ln -s /etc/nginx/sites-available/default.conf /etc/nginx/sites-enabled
-
+RUN cp /var/www/html/nginx.example.com.conf /config/akaunting.conf
+RUN ln -s /etc/nginx/sites-avaliable/akaunting.conf
+RUN chown root:root /etc/nginx/sites-available/akaunting.conf
+RUN ln -s /etc/nginx/sites-available/akaunting.conf /etc/nginx/sites-enabled/akaunting.conf
+RUN mkdir /config
 
 
 #Volumes
-VOLUME ["/var/www/akaunting","/etc/nginx/"]
+VOLUME /config
 
 
 #Expose ports
