@@ -8,3 +8,4 @@ add an internal mariadb server.
 After the service comes up you can acces it at <machine ip>:3186.
 If you want to build this your self you can edit config/akaunting.conf before you build.
 Fixed mirror to github.
+Added an arm32 docker image. To use it cp docker-compose.yml.arm32 to docker-compose.yml then docker-compose up -d, and access it at <maching ip>:3186. 
