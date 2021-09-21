@@ -3,7 +3,7 @@ FROM ubuntu:20.04
 
 # LABEL about the custom image
 LABEL maintainer="whitlocktech@gmail.com"
-LABEL version="0.5"
+LABEL version="1.0"
 LABEL description="Dockerized Akaunting"
 LABEL Akaunting_version="2.1.25"
 
