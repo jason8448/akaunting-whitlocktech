@@ -20,22 +20,24 @@ RUN apt install -y nginx mariadb-server mariadb-client php7.4 php7.4-imagick php
 RUN apt install -y unzip
 RUN apt install -y wget
 
+#Open SSL Selfsigned
+#RUN apt install openssl
+#RUN openssl req -x509 -nodes -days 1024 -subj "/C=US/ST=TX/O=TestOrg/CN=akaunting.local" --addext "subjectAltName=DNS:testdomain.com" -newkey rsa:2048 -keyout /etc/ssl/private/nginx-selfsigned.key -out /etc/ssl/cets/nginx-selfsigned.cert;
+
 #Download akaunting
 RUN wget -O /tmp/akaunting.zip https://github.com/akaunting/akaunting/releases/download/2.1.25/Akaunting_2.1.25-Stable.zip
 RUN unzip /tmp/akaunting.zip -d /var/www/html
-RUN chown www-data:www-data /var/www/html
-RUN rm /etc/nginx/sites-enabled/default
-RUN mkdir /config
-RUN cp /var/www/html/nginx.example.com.conf /config/akaunting.conf
-RUN chown root:root /config/akaunting.conf
-RUN ln -s /etc/nginx/sites-avaliable/akaunting.conf
-RUN ln -s /etc/nginx/sites-available/akaunting.conf /etc/nginx/sites-enabled/akaunting.conf
-ADD ./config/akaunting.conf /config/akaunting.conf
-
+RUN chown -R www-data:www-data /var/www/html
+RUN rm /var/www/html/index.html
+#RUN rm /etc/nginx/sites-enabled/default
+#RUN mkdir /config
+#RUN cp /var/www/html/nginx.example.com.conf /etc/nginx/sites-available/akaunting.conf
+#ADD ./config/akaunting.conf /etc/nginx/sites-available/akaunting.conf
+#RUN chown root:root /etc/nginx/sites-available/akaunting.conf
+#RUN ln -s /etc/nginx/sites-available/akaunting.conf /etc/nginx/sites-enabled/akaunting.conf
 
 #Volumes
-VOLUME /config
-
+#VOLUME /config
 
 #Expose ports
 
