@@ -44,6 +44,10 @@ COPY ./docker/supervisord.conf /etc/supervisord.conf
 
 EXPOSE 80
 
+#Volume to keep the data
+
+VOLUME ["/var/www/html"]
+
 # CMD
 
 CMD ["/usr/bin/supervisord"]
