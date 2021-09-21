@@ -1,0 +1,16 @@
+---
+version: "3"
+services:
+  akaunting:
+    image: whitlocktech/akaunting:arm32
+    container_name: akaunting
+#    environment:
+#      - AKAUNTING_URL=https://akaunting.whitlocktech.com
+    ports:
+      - 3186:80
+    volumes:
+      - akaunting-data:/var/www/html/    
+    restart: unless-stopped
+volumes:
+   akaunting-data:
+  
