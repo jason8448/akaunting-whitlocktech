@@ -38,6 +38,9 @@ COPY ./config/akaunting.conf /etc/nginx/sites-available/akaunting.conf
 COPY ./config/fpm/akaunting_pool.conf /etc/php/7.4/fpm/pool.d
 RUN chown root:root /etc/nginx/sites-available/akaunting.conf
 RUN ln -s /etc/nginx/sites-available/akaunting.conf /etc/nginx/sites-enabled/akaunting.conf
+
+#copy Supervisord conf into container
+
 COPY ./docker/supervisord.conf /etc/supervisord.conf
 
 #Expose Ports
@@ -46,8 +49,7 @@ EXPOSE 80
 
 #Volume to keep the data
 
-VOLUME ["/var/www/html"]
-
+VOLUME ["/var/www/html/"]
 # CMD
 
 CMD ["/usr/bin/supervisord"]
