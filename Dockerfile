@@ -20,9 +20,8 @@ RUN apt install -y nginx mariadb-server mariadb-client php7.4 php7.4-imagick php
 RUN apt install -y unzip
 RUN apt install -y wget
 
-#Open SSL Selfsigned
-#RUN apt install openssl
-#RUN openssl req -x509 -nodes -days 1024 -subj "/C=US/ST=TX/O=TestOrg/CN=akaunting.local" --addext "subjectAltName=DNS:testdomain.com" -newkey rsa:2048 -keyout /etc/ssl/private/nginx-selfsigned.key -out /etc/ssl/cets/nginx-selfsigned.cert;
+
+#Comented out sections are from areas that i was trying to pull the conf from the host directory to make it easier to edit.
 
 #Download akaunting
 RUN wget -O /tmp/akaunting.zip https://github.com/akaunting/akaunting/releases/download/2.1.25/Akaunting_2.1.25-Stable.zip
