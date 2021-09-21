@@ -1,5 +1,5 @@
 # akaunting
 
-Trying to make an akaunting docker container
-This is for running on x64 Linux host. IDK if it will work on others.
-All help is welcome.
+To get this working cp config/akaunting.example.conf to akaunting.conf
+Edit the servername variable to fit. Right now this works for your private network but i haven't
+got it working for external proxied service yet.

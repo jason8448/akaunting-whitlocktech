@@ -4,7 +4,5 @@ services:
   akaunting:
     image: whitlocktech/akaunting:latest
     container_name: akaunting
-    volumes:
-      - /home/colby/config:/config
     ports:
       - 3186:80
