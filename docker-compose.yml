@@ -4,8 +4,8 @@ services:
   akaunting:
     image: whitlocktech/akaunting:latest
     container_name: akaunting
-#    environment:
-#      - AKAUNTING_URL=https://akaunting.whitlocktech.com
+    environment:
+      - AKAUNTING_URL=https://akaunting.whitlocktech.com
     ports:
       - 3186:80
     volumes:
