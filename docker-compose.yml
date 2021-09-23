@@ -11,6 +11,22 @@ services:
     volumes:
       - akaunting-data:/var/www/html/    
     restart: unless-stopped
+    depends_on: 
+     - akaunting_db
+
+  akaunting_db:
+    image: mysql:8.0.26
+    container_name: akaunting_db
+    environment:
+     - MYSQL_ROOT_PASSWORD=MySql3-TestPass
+     - MYSQL_DATABASE=akaunting
+     - MYSQL_USER=akaunting
+     - MYSQL_PASSWORD=Akaunting_db-Password
+    ports:
+     - 3306:3306
+    volumes:
+     - ./mysql:/var/lib/mysql
+
 volumes:
    akaunting-data:
-  
+   

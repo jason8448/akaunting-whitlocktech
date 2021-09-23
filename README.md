@@ -9,9 +9,12 @@ Right now this works for your private network but i haven't
 got it working for external proxied service yet.
 <<<<<<< HEAD
 
-### Requirements
-- External Mysql/ Mariadb server
+This has builtin mysql db. the variables are as follows.
 
+MYSQL_ROOT_PASSWORD
+MYSQL_DATABASE
+MYSQL_USERNAME
+MYSQL_PASSWORD
 
 After the service comes up you can acces it at :3186.
 
