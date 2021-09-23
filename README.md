@@ -21,7 +21,7 @@ Added an arm32 docker image. To use it cp docker-compose.yml.arm32 to docker-com
 
 docker-compose.yml
 
-'''
+```
 ---
 version: "3"
 services:
@@ -55,5 +55,5 @@ volumes:
    akaunting-data:
    
 
-'''
+```
 
