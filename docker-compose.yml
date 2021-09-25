@@ -9,7 +9,8 @@ services:
     ports:
       - 3186:80
     volumes:
-      - akaunting-data:/var/www/html/    
+      - akaunting-data:/var/www/html/
+      - ./config/trustedproxy.php:/var/www/html/config/trustedproxy.php    
     restart: unless-stopped
     depends_on: 
      - akaunting_db

@@ -3,7 +3,7 @@ FROM ubuntu:20.04
 
 # LABEL about the custom image
 LABEL maintainer="whitlocktech@gmail.com"
-LABEL version="1.2"
+LABEL version="1.3"
 LABEL description="Dockerized Akaunting"
 LABEL Akaunting_version="2.1.25"
 
@@ -47,6 +47,7 @@ EXPOSE 80
 #Volume to keep the data
 
 VOLUME ["/var/www/html/"]
+VOLUME ["/var/www/html/config/trustedproxy.php"]
 # CMD
 
 CMD ["/usr/bin/supervisord"]
