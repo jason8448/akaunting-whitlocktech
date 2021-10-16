@@ -3,9 +3,9 @@ FROM ubuntu:20.04
 
 # LABEL about the custom image
 LABEL maintainer="whitlocktech@gmail.com"
-LABEL version="1.3"
+LABEL version="1.4"
 LABEL description="Dockerized Akaunting"
-LABEL Akaunting_version="2.1.25"
+LABEL Akaunting_version="2.1.26"
 
 # Disable Prompt During Packages Installation
 ARG DEBIAN_FRONTEND=noninteractive
@@ -26,7 +26,7 @@ RUN sed -i -e "s/;daemonize\s*=\s*yes/daemonize = no/g" /etc/php/7.4/fpm/php-fpm
 #Comented out sections are from areas that i was trying to pull the conf from the host directory to make it easier to edit.
 
 #Download akaunting
-RUN wget -O /tmp/akaunting.zip https://github.com/akaunting/akaunting/releases/download/2.1.25/Akaunting_2.1.25-Stable.zip
+RUN wget -O /tmp/akaunting.zip https://github.com/akaunting/akaunting/releases/download/2.1.26/Akaunting_2.1.26-Stable.zip
 RUN unzip /tmp/akaunting.zip -d /var/www/html
 RUN chown -R www-data:www-data /var/www/html
 Run rm /var/www/html/index.nginx-debian.html
