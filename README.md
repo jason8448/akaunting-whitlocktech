@@ -19,7 +19,7 @@ After the service comes up you can acces it at :3186.
 
 If you wish to use a proxy infront of this image exit the trustedpry.php in config. If you uncomment the proxy line it will trust all proxies in front of it.
 
-Added an arm32 docker image. To use it cp docker-compose.yml.arm32 to docker-compose.yml then docker-compose up -d, and access it at :3186.
+
 
 docker-compose.yml
 
