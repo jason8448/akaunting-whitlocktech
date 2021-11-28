@@ -5,10 +5,7 @@
 
 This is my version of a dockerized akaunting.
 
-Right now this works for your private network but i haven't
-got it working for external proxied service yet.
-
-This has builtin mysql db. the variables are as follows.
+The docker-compose has a mysql image that you can use or remove it from the compose file to use.
 
 MYSQL_ROOT_PASSWORD
 MYSQL_DATABASE
