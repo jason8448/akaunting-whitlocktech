@@ -1,9 +1,14 @@
 # Download base image ubuntu 20.04
 FROM ubuntu:20.04
 
+#Setting up app user
+
+RUN groupadd -g 999 akauntinguser 
+RUN useradd -r -u 999 -g akauntinguser akauntinguser
+
 # LABEL about the custom image
 LABEL maintainer="whitlocktech@gmail.com"
-LABEL version="1.6"
+LABEL version="1.7"
 LABEL description="Dockerized Akaunting"
 LABEL Akaunting_version="2.1.28"
 
@@ -52,5 +57,7 @@ RUN rm /var/www/html/config/trustedproxy.php
 VOLUME ["/var/www/html/"]
 VOLUME ["/var/www/html/config/trustedproxy.php"]
 # CMD
+
+USER akauntinguser
 
 CMD ["/usr/bin/supervisord"]
