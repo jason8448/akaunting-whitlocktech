@@ -13,7 +13,7 @@ USER akauntinguser
 
 # LABEL about the custom image
 LABEL maintainer="whitlocktech@gmail.com"
-LABEL version="1.75"
+LABEL version="1.71"
 LABEL description="Dockerized Akaunting"
 LABEL Akaunting_version="2.1.28"
 
