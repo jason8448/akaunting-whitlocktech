@@ -48,9 +48,7 @@ RUN sudo ln -s /etc/nginx/sites-available/akaunting.conf /etc/nginx/sites-enable
 
 #copy Supervisord conf into container and set log perms
 
-COPY --chown=akauntinguser:akauntinguser ./docker/supervisord.conf /etc/supervisord.conf
-RUN sudo mkdir /app
-RUN sudo chown akauntinguser:akauntinguser /app
+COPY ./docker/supervisord.conf /etc/supervisord.conf
 RUN sudo chown root:akauntinguser /etc/supervisord.conf
 
 #Expose Ports
@@ -66,6 +64,6 @@ VOLUME ["/var/www/html/"]
 VOLUME ["/var/www/html/config/trustedproxy.php"]
 # CMD
 
-USER akauntinguser
+USER root
 
 CMD ["/usr/bin/supervisord"]
